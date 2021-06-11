@@ -4,12 +4,14 @@
 \alias{get_coin_history}
 \title{Get price history}
 \usage{
-get_coin_history(coin, POSIX_date, localization = FALSE)
+get_coin_history(coin, date_POSIXlt, simplify = TRUE, localization = FALSE)
 }
 \arguments{
 \item{coin}{character}
 
-\item{POSIX_date}{POSIXct}
+\item{date_POSIXlt}{POSIXlt}
+
+\item{simplify}{logical}
 
 \item{localization}{logical}
 }
@@ -20,6 +22,6 @@ list
 function retreives price data for specified coin on specified date
 }
 \examples{
-get_coin_history(coin = "bitcoin", POSIX_date = as.POSIXlt("2015-12-01"))
+get_coin_history(coin = "bitcoin", date_POSIXlt = as.POSIXlt("2015-12-01"))
 
 }

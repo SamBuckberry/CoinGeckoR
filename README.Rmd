@@ -1,30 +1,36 @@
 ---
-title: "Untitled"
-author: "Sam Buckberry"
-date: "11/06/2021"
+title: "CoinGeckoR"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## R wrapper for the CoinGecko API
+
+### How to install CoinGeckoR
+
+GitHub
+```{r, eval=FALSE}
+library(devtools)
+install_github("https://github.com/SamBuckberry/CoinGeckoR")
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+CRAN
+```{r, eval=FALSE}
+install.packages("CoinGeckoR")
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+### Examples of CoinGeckoR functions
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+library(CoinGeckoR)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Retreive coin price history for a specific date
+```{r}
+btc_price_list <- get_coin_history(coin = "bitcoin",
+                                   date_POSIXlt = as.POSIXlt("2015-12-31"))
+head(btc_price_list)
+```
+
+

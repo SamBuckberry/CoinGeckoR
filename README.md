@@ -1,35 +1,41 @@
-Untitled
+CoinGeckoR
 ================
-Sam Buckberry
-11/06/2021
 
-## R Markdown
+## R wrapper for the CoinGecko API
 
-This is an R Markdown document. Markdown is a simple formatting syntax
-for authoring HTML, PDF, and MS Word documents. For more details on
-using R Markdown see <http://rmarkdown.rstudio.com>.
+### How to install CoinGeckoR
 
-When you click the **Knit** button a document will be generated that
-includes both content as well as the output of any embedded R code
-chunks within the document. You can embed an R code chunk like this:
+GitHub
 
 ``` r
-summary(cars)
+library(devtools)
+install_github("https://github.com/SamBuckberry/CoinGeckoR")
 ```
 
-    ##      speed           dist       
-    ##  Min.   : 4.0   Min.   :  2.00  
-    ##  1st Qu.:12.0   1st Qu.: 26.00  
-    ##  Median :15.0   Median : 36.00  
-    ##  Mean   :15.4   Mean   : 42.98  
-    ##  3rd Qu.:19.0   3rd Qu.: 56.00  
-    ##  Max.   :25.0   Max.   :120.00
+CRAN
 
-## Including Plots
+``` r
+install.packages("CoinGeckoR")
+```
 
-You can also embed plots, for example:
+### Examples of CoinGeckoR functions
 
-![](README_files/figure-gfm/pressure-1.png)<!-- -->
+``` r
+library(CoinGeckoR)
+```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+Retreive coin price history for a specific date
+
+``` r
+btc_price_list <- get_coin_history(coin = "bitcoin",
+                                   date_POSIXlt = as.POSIXlt("2015-12-31"))
+head(btc_price_list)
+```
+
+    ##         date    coin symbol currency      price   market_cap total_volume
+    ## 1 31-12-2015 bitcoin    btc      aed  1583.4679  23798453966   4811431259
+    ## 2 31-12-2015 bitcoin    btc      ars  5590.2992  84018423113  16986349950
+    ## 3 31-12-2015 bitcoin    btc      aud   592.5117   8905050906   1800370745
+    ## 4 31-12-2015 bitcoin    btc      bdt 33848.6328 508722102886 102850438593
+    ## 5 31-12-2015 bitcoin    btc      bhd   162.5424   2442902871    493891715
+    ## 6 31-12-2015 bitcoin    btc      bmd   431.1390   6479728151   1310033275

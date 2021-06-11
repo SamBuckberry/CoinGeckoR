@@ -1,3 +1,7 @@
 ^CoinGeckoR\.Rproj$
 ^\.Rproj\.user$
 ^LICENSE\.md$
+README.md
+README.Rmd
+setup.R
+^README_files/*

@@ -3,3 +3,4 @@
 export(get_coin_history)
 import(RCurl)
 import(RJSONIO)
+import(assertthat)
