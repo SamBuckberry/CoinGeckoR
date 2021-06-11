@@ -1,0 +1,18 @@
+Package: CoinGeckoR
+Title: R wrapper for the CoinGecko API
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Sam",
+           family = "Buckberry",
+           role = c("aut", "cre"),
+           email = "sambuckberry@protonmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: R wrapper for the CoinGecko API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    RJSONIO,
+    RCurl
