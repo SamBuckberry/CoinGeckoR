@@ -3,6 +3,8 @@ title: "CoinGeckoR"
 output: github_document
 ---
 
+*Package is currently under development and in its infancy*
+
 ## R wrapper for the CoinGecko API
 
 ### How to install CoinGeckoR
@@ -24,11 +26,23 @@ install.packages("CoinGeckoR")
 library(CoinGeckoR)
 ```
 
+#### Ping
+
 Ping the CoinGecko API
 ```{r}
 ping_gecko()
 ```
 
+#### Simple
+
+`/simple/price`
+Get the current price of any cryptocurrencies in any other supported currencies that you need.
+```{r}
+
+```
+
+
+#### Coins
 
 Retreive coin price history for a specific date
 ```{r}
