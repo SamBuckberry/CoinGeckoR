@@ -3,13 +3,14 @@ title: "CoinGeckoR"
 output: github_document
 ---
 
-### R wrapper for the CoinGecko API
+### R functions for interacting with the CoinGecko API
 
 *Package is currently under development and in its infancy*
 
+CoinGecko API documentation
 https://www.coingecko.com/en/api
 
-### How to install CoinGeckoR
+### Installation
 
 ---
 
@@ -43,6 +44,7 @@ ping_gecko()
 
 - `/simple/price`  
 Get the current price of any cryptocurrencies in any other supported currencies that you need.
+
 ```{r}
 price(ids = "bitcoin", vs_currencies = "aud")
 ```

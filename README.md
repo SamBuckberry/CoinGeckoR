@@ -1,13 +1,13 @@
 CoinGeckoR
 ================
 
-### R wrapper for the CoinGecko API
+### R functions for interacting with the CoinGecko API
 
 *Package is currently under development and in its infancy*
 
-<https://www.coingecko.com/en/api>
+CoinGecko API documentation <https://www.coingecko.com/en/api>
 
-### How to install CoinGeckoR
+### Installation
 
 -----
 
@@ -58,7 +58,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 53241
+    ## 53042
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
