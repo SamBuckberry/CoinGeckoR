@@ -19,11 +19,6 @@ library(devtools)
 install_github("https://github.com/SamBuckberry/CoinGeckoR")
 ```
 
- or CRAN
-```{r, eval=FALSE}
-install.packages("CoinGeckoR")
-```
-
 Load the library
 ```{r}
 library(CoinGeckoR)
@@ -33,18 +28,15 @@ library(CoinGeckoR)
 
 ---
 
-#### Ping  
+#### Simple  
 
 ---
 
+`/simple/ping`
 Ping the CoinGecko API
 ```{r}
 ping_gecko()
 ```
-
-#### Simple  
-
----
 
 `/simple/price`
 Get the current price of any cryptocurrencies in any other supported currencies that you need.
@@ -52,10 +44,24 @@ Get the current price of any cryptocurrencies in any other supported currencies 
 
 ```
 
+`/simple/supported_vs_currencies`
+Get list of supported_vs_currencies  
+```{r}
+support_list <- supported_vs_currencies()
+head(support_list)
+```
+
 
 #### Coins  
 
 ---
+
+`/coins/list`
+List all supported coins id, name and symbol.
+```{r}
+
+```
+
 
 Retreive coin price history for a specific date
 ```{r}

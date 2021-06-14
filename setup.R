@@ -61,9 +61,27 @@ ping_gecko <- function(){
         return(ping)
 }
 
+use_r("ping_gecko")
+
+
+prefix <- "https://api.coingecko.com/api/v3/simple/"
+
+api_version <- function(){
+        "https://api.coingecko.com/api/v3"
+}
+
+use_r("api_version")
+
+ping_gecko <- function(){
+
+        ping <- RCurl::getURLContent("https://api.coingecko.com/api/v3/ping")
+        ping <- RJSONIO::fromJSON(ping)
+        return(ping)
+}
+
 ping_gecko()
 
-use_r("ping_gecko")
+
 
 load_all()
 
