@@ -17,7 +17,8 @@ api_version <- function(){
 #' @return list
 #' @export
 #'
-#' @examples
+#' @examples get_json("https://api.coingecko.com/api/v3/ping")
+#'
 get_json <- function(api_call){
 
         json_dat <- RCurl::getURLContent(api_call)

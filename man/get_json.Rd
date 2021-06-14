@@ -15,3 +15,7 @@ list
 \description{
 Make the call to the CoinGecko API
 }
+\examples{
+get_json("https://api.coingecko.com/api/v3/ping")
+
+}

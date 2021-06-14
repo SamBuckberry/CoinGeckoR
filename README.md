@@ -24,15 +24,16 @@ Load the library
 library(CoinGeckoR)
 ```
 
-### Examples of CoinGeckoR functions
+### CoinGeckoR functions
 
 -----
 
-#### Simple
+#### Ping
 
------
+  - `/simple/ping`  
+    Check API server status
 
-Ping the CoinGecko API `/simple/ping`
+<!-- end list -->
 
 ``` r
 ping_gecko()
@@ -41,14 +42,36 @@ ping_gecko()
     ##          gecko_says 
     ## "(V3) To the Moon!"
 
-`/simple/price` Get the current price of any cryptocurrencies in any
-other supported currencies that you need.
+#### Simple
 
-`/simple/supported_vs_currencies` Get list of supported\_vs\_currencies
+-----
+
+  - `/simple/price`  
+    Get the current price of any cryptocurrencies in any other supported
+    currencies that you need.
+
+<!-- end list -->
+
+``` r
+price(ids = "bitcoin", vs_currencies = "aud")
+```
+
+    ## $bitcoin
+    ##   aud 
+    ## 53241
+
+  - `/simple/token_price/{id}`  
+    Get current price of tokens (using contract addresses) for a given
+    platform in any other currency that you need.
+
+  - `/simple/supported_vs_currencies`  
+    Get list of supported\_vs\_currencies
+
+<!-- end list -->
 
 ``` r
 support_list <- supported_vs_currencies()
-head(support_list)
+support_list[1:6]
 ```
 
     ## [1] "btc" "eth" "ltc" "bch" "bnb" "eos"
@@ -57,7 +80,7 @@ head(support_list)
 
 -----
 
-List all supported coins id, name and symbol. `/coins/list`
+  - `/coins/list` List all supported coins id, name and symbol.
 
 Retreive coin price history for a specific date
 

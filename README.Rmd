@@ -24,31 +24,40 @@ Load the library
 library(CoinGeckoR)
 ```
 
-### Examples of CoinGeckoR functions
+### CoinGeckoR functions
 
 ---
+
+#### Ping
+
+- `/simple/ping`  
+Check API server status
+```{r}
+ping_gecko()
+```
+
 
 #### Simple  
 
 ---
 
-`/simple/ping`
-Ping the CoinGecko API
-```{r}
-ping_gecko()
-```
-
-`/simple/price`
+- `/simple/price`  
 Get the current price of any cryptocurrencies in any other supported currencies that you need.
 ```{r}
+price(ids = "bitcoin", vs_currencies = "aud")
+```
+
+- `/simple/token_price/{id}`  
+Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
+```{r}
 
 ```
 
-`/simple/supported_vs_currencies`
+- `/simple/supported_vs_currencies`  
 Get list of supported_vs_currencies  
 ```{r}
 support_list <- supported_vs_currencies()
-head(support_list)
+support_list[1:6]
 ```
 
 
@@ -56,7 +65,7 @@ head(support_list)
 
 ---
 
-`/coins/list`
+- `/coins/list`
 List all supported coins id, name and symbol.
 ```{r}
 
