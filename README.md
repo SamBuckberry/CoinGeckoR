@@ -59,7 +59,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 52420
+    ## 52395
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -113,9 +113,11 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 40332
+    ## [1] 40311
 
 #### Categories
+
+-----
 
   - `/coins/categories/list` List all categories
 

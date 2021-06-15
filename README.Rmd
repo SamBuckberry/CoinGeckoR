@@ -88,6 +88,8 @@ mkt[[1]][c("id", "current_price")]
 
 #### Categories
 
+---
+
 - `/coins/categories/list`
 List all categories
 ```{r}
