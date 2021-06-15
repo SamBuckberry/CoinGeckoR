@@ -5,7 +5,8 @@ CoinGeckoR
 
 *Package is currently under development and in its infancy*
 
-CoinGecko API documentation <https://www.coingecko.com/en/api>
+CoinGecko API documentation (v3)
+<https://www.coingecko.com/api/documentations/v3>
 
 ### Installation
 
@@ -58,7 +59,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 52472
+    ## 52420
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -99,6 +100,43 @@ cl[1:3, ]
 
   - `/coins/markets` List all supported coins price, market cap, volume,
     and market related data.
+
+<!-- end list -->
+
+``` r
+mkt <- markets(vs_currency = "usd", ids = "bitcoin")
+
+mkt[[1]][c("id", "current_price")]
+```
+
+    ## $id
+    ## [1] "bitcoin"
+    ## 
+    ## $current_price
+    ## [1] 40332
+
+#### Categories
+
+  - `/coins/categories/list` List all categories
+
+<!-- end list -->
+
+``` r
+cat_list <- coin_categories()
+
+cat_list <- do.call(rbind, cat_list)
+head(cat_list)
+```
+
+    ##      category_id               name                     
+    ## [1,] "recently_added"          "Recently Added"         
+    ## [2,] "aave-tokens"             "Aave Tokens"            
+    ## [3,] "analytics"               "Analytics"              
+    ## [4,] "artificial-intelligence" "Artificial Intelligence"
+    ## [5,] "asset-backed-tokens"     "Asset-backed Tokens"    
+    ## [6,] "asset-manager"           "Asset Manager"
+
+#### Examples
 
 Retreive coin price history for a specific date
 
