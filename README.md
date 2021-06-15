@@ -58,7 +58,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 53042
+    ## 52472
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -81,6 +81,24 @@ support_list[1:6]
 -----
 
   - `/coins/list` List all supported coins id, name and symbol.
+
+<!-- end list -->
+
+``` r
+cl <- coins_list()
+
+# Make as a data.frame
+cl <- do.call(rbind, cl)
+cl[1:3, ]
+```
+
+    ##      id                              symbol     name                           
+    ## [1,] "01coin"                        "zoc"      "01coin"                       
+    ## [2,] "0-5x-long-algorand-token"      "algohalf" "0.5X Long Algorand Token"     
+    ## [3,] "0-5x-long-altcoin-index-token" "althalf"  "0.5X Long Altcoin Index Token"
+
+  - `/coins/markets` List all supported coins price, market cap, volume,
+    and market related data.
 
 Retreive coin price history for a specific date
 
