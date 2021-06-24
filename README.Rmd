@@ -85,6 +85,17 @@ mkt <- markets(vs_currency = "usd", ids = "bitcoin")
 mkt[[1]][c("id", "current_price")]
 ```
 
+- `/coins/{id}`
+Get current data (name, price, market, ... including exchange tickers) for a coin. 
+```{r}
+cd <- coins_data(id = "bitcoin")
+
+# See data types in the list
+names(cd)
+```
+
+
+
 
 #### Categories
 
@@ -98,6 +109,20 @@ cat_list <- coin_categories()
 cat_list <- do.call(rbind, cat_list)
 head(cat_list)
 ```
+
+
+- `/coins/categories/list`
+List all categories with market data
+```{r}
+cat_list <- coin_categories_data()
+
+cat_list <- do.call(rbind, cat_list)
+head(cat_list)
+```
+
+
+
+
 
 
 #### Examples
