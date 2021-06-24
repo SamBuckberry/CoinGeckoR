@@ -57,3 +57,46 @@ markets <- function(vs_currency, ids, category=NA,
 
 
 
+#' Title
+#'
+#' @param id Character. The id of the coin. refers to /coins/list.
+#' @param localization logical.
+#' @param tickers logical.
+#' @param market_data logical.
+#' @param community_data logical.
+#' @param developer_data logical.
+#' @param sparkline logical.
+#'
+#' @return list.
+#' @export
+#'
+#' @examples coins_data()
+#'
+coins_data <- function(id="bitcoin", localization=FALSE,
+                       tickers=FALSE, market_data=TRUE,
+                       community_data=FALSE, developer_data=FALSE,
+                       sparkline=FALSE){
+
+        assertthat::assert_that(class(id) == "character")
+        assertthat::assert_that(class(localization) == "logical")
+        assertthat::assert_that(class(tickers) == "logical")
+        assertthat::assert_that(class(market_data) == "logical")
+        assertthat::assert_that(class(community_data) == "logical")
+        assertthat::assert_that(class(developer_data) == "logical")
+        assertthat::assert_that(class(sparkline) == "logical")
+
+        v <- api_version()
+
+        api_call <- paste0(v,
+                           "coins/", id,
+                           "?localization=", casefold(localization),
+                           "&tickers=", casefold(tickers),
+                           "&market_data=", casefold(market_data),
+                           "&community_data=", casefold(community_data),
+                           "&developer_data=", casefold(developer_data),
+                           "&sparkline=", casefold(sparkline))
+
+        json_dat <- get_json(api_call)
+        return(json_dat)
+
+}
