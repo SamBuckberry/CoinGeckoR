@@ -95,11 +95,10 @@ names(cd)
 ```
 
 - `/coins/{id}/tickers`
-Get coin tickers (paginated to 100 items)
-```{r}
+Get coin tickers (paginated to 100 items). 
+This function returns a lot of information!
+```{r, eval=FALSE}
 ticker_dat <- coins_tickers(id="bitcoin")
-
-head(ticker_dat)
 ```
 
 

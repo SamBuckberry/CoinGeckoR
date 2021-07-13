@@ -2,7 +2,7 @@
 % Please edit documentation in R/coins.R
 \name{coins_data}
 \alias{coins_data}
-\title{Title}
+\title{Coin data}
 \usage{
 coins_data(
   id = "bitcoin",
@@ -33,7 +33,7 @@ coins_data(
 list.
 }
 \description{
-Title
+Coin data
 }
 \examples{
 coins_data()

@@ -2,7 +2,7 @@
 % Please edit documentation in R/coins.R
 \name{coins_tickers}
 \alias{coins_tickers}
-\title{Title}
+\title{Coin tickers}
 \usage{
 coins_tickers(id)
 }
@@ -13,7 +13,7 @@ coins_tickers(id)
 list.
 }
 \description{
-Title
+Coin tickers
 }
 \examples{
 coins_tickers(id="bitcoin")

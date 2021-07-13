@@ -59,7 +59,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 44520
+    ## 43730
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -113,7 +113,7 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 33717
+    ## [1] 32584
 
   - `/coins/{id}` Get current data (name, price, market, … including
     exchange tickers) for a coin.
@@ -141,6 +141,15 @@ names(cd)
     ## [23] "liquidity_score"                 "public_interest_score"          
     ## [25] "market_data"                     "public_interest_stats"          
     ## [27] "status_updates"                  "last_updated"
+
+  - `/coins/{id}/tickers` Get coin tickers (paginated to 100 items).
+    This function returns a lot of information\!
+
+<!-- end list -->
+
+``` r
+ticker_dat <- coins_tickers(id="bitcoin")
+```
 
 #### Categories
 
@@ -182,14 +191,14 @@ head(cat_list)
     ## [3,] "decentralized-finance-defi"     "Decentralized Finance (DeFi)"    
     ## [4,] "binance-smart-chain"            "Binance Smart Chain Ecosystem"   
     ## [5,] "centralized-exchange-token-cex" "Centralized Exchange Token (CEX)"
-    ## [6,] "meme-token"                     "Meme Tokens"                     
+    ## [6,] "governance"                     "Governance"                      
     ##      market_cap   market_cap_change_24h volume_24h  updated_at                
-    ## [1,] 111330579836 1.952634              87305358497 "2021-06-23T23:55:23.765Z"
-    ## [2,] 79878070233  12.76361              9151934579  "2021-06-23T23:55:22.998Z"
-    ## [3,] 65090655816  9.575776              6778123385  "2021-06-23T23:55:19.964Z"
-    ## [4,] 63607767727  12.46071              11059353508 "2021-06-23T23:55:17.621Z"
-    ## [5,] 59657860996  12.59784              4905625182  "2021-06-23T23:55:04.397Z"
-    ## [6,] 34554934483  24.24541              6450245040  "2021-06-23T23:55:14.572Z"
+    ## [1,] 112948129529 0.2253937             46411374273 "2021-07-13T13:40:31.716Z"
+    ## [2,] 86055359938  -0.9398896            6541474133  "2021-07-13T13:40:30.201Z"
+    ## [3,] 74416141591  -1.474528             4547963141  "2021-07-13T13:40:27.652Z"
+    ## [4,] 66773805750  -1.110162             5376846608  "2021-07-13T13:40:24.891Z"
+    ## [5,] 63668865840  -0.5073444            2186958416  "2021-07-13T13:40:05.018Z"
+    ## [6,] 31317341156  -2.112996             1911585020  "2021-07-13T13:40:29.368Z"
 
 #### Examples
 
