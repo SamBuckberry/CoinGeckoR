@@ -97,7 +97,9 @@ names(cd)
 - `/coins/{id}/tickers`
 Get coin tickers (paginated to 100 items)
 ```{r}
-ticker <- coins_tick
+ticker_dat <- coins_tickers(id="bitcoin")
+
+head(ticker_dat)
 ```
 
 
