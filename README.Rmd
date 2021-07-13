@@ -94,6 +94,13 @@ cd <- coins_data(id = "bitcoin")
 names(cd)
 ```
 
+- `/coins/{id}/tickers`
+Get coin tickers (paginated to 100 items)
+```{r}
+ticker <- coins_tick
+```
+
+
 
 
 

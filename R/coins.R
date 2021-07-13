@@ -56,8 +56,7 @@ markets <- function(vs_currency, ids, category=NA,
 }
 
 
-
-#' Title
+#' Coin data
 #'
 #' @param id Character. The id of the coin. refers to /coins/list.
 #' @param localization logical.
@@ -100,3 +99,26 @@ coins_data <- function(id="bitcoin", localization=FALSE,
         return(json_dat)
 
 }
+
+
+#' Coin tickers
+#'
+#' @param id Character. The id of the coin. refers to /coins/list.
+#'
+#' @return list.
+#' @export
+#'
+#' @examples coins_tickers(id="bitcoin")
+coins_tickers <- function(id){
+
+        assertthat::assert_that(class(id) == "character")
+
+        v <- api_version()
+
+        api_call <- paste0(v,"coins/", id, "/tickers")
+
+        json_dat <- get_json(api_call)
+        return(json_dat)
+}
+
+
