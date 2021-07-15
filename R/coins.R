@@ -121,4 +121,34 @@ coins_tickers <- function(id){
         return(json_dat)
 }
 
+#' Charts
+#' @description Get historical market data include price, market cap, and 24h volume (granularity auto).Minutely data will be used for duration within 1 day, Hourly data will be used for duration between 1 day and 90 days, Daily data will be used for duration above 90 days.
+#' @param id Character. The id of the coin. refers to /coins/list.
+#' @param currency Character. The target currency of market data (usd, eur, jpy, etc.)
+#' @param days Integer. How many days of data to retreive.
+#'
+#' @return list.
+#' @export
+#'
+#' @examples coins_chart(id="bitcoin, currency="usd", days=30)
+coins_chart <- function(id, currency, days=30){
+
+        assertthat::assert_that(class(id) == "character")
+        assertthat::assert_that(class(currency) == "character")
+        assertthat::assert_that(class(days) == "numeric")
+
+        v <- api_version()
+
+        api_call <- paste0(v,
+                           "coins/", id,
+                           "/market_chart?vs_currency=", casefold(currency),
+                           "&days=", days,
+                           "&interval=daily")
+
+        json_dat <- get_json(api_call)
+        return(json_dat)
+
+}
+
+
 
