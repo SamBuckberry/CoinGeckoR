@@ -8,10 +8,10 @@ CoinGeckoR
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under
 development*
 
------
-
 CoinGecko API documentation (v3)
 <https://www.coingecko.com/api/documentations/v3>
+
+-----
 
 ### Installation
 
@@ -118,7 +118,7 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 33034
+    ## [1] 33060
 
   - `/coins/{id}` Get current data (name, price, market, … including
     exchange tickers) for a coin.
@@ -198,12 +198,12 @@ head(cat_list)
     ## [5,] "centralized-exchange-token-cex" "Centralized Exchange Token (CEX)"
     ## [6,] "polygon-ecosystem"              "Polygon Ecosystem"               
     ##      market_cap   market_cap_change_24h volume_24h  updated_at                
-    ## [1,] 113578588477 0.1578766             50120058099 "2021-07-15T00:41:00.839Z"
-    ## [2,] 85106749275  -0.864669             7846923851  "2021-07-15T00:40:59.816Z"
-    ## [3,] 73312686657  -0.5880068            5927227792  "2021-07-15T00:40:56.888Z"
-    ## [4,] 66938686679  -0.4959046            6015611237  "2021-07-15T00:40:53.010Z"
-    ## [5,] 63629988396  -0.715685             3073229100  "2021-07-15T00:40:31.294Z"
-    ## [6,] 30324218366  -1.131554             4946658520  "2021-07-15T00:40:48.047Z"
+    ## [1,] 113578588477 0.3847285             50096132180 "2021-07-15T00:50:29.705Z"
+    ## [2,] 85107334591  -0.6071738            7921195216  "2021-07-15T00:50:28.843Z"
+    ## [3,] 73308527298  -0.2889902            5924535976  "2021-07-15T00:50:26.265Z"
+    ## [4,] 66938686679  -0.2390817            6016346824  "2021-07-15T00:50:22.769Z"
+    ## [5,] 63629988396  -0.4421776            3076482189  "2021-07-15T00:50:05.131Z"
+    ## [6,] 30321313367  -0.6869153            4953625733  "2021-07-15T00:50:18.781Z"
 
 #### Examples
 
