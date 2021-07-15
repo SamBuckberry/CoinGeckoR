@@ -3,9 +3,9 @@ title: "CoinGeckoR"
 output: github_document
 ---
 
-<img src="images/CoinGecko_Logo.png" style="height: 100px; width:100px;"/>
+<a><img src="images/CoinGecko_Logo.png" align="left" height="100" width="100" ></a>
 
-### R functions for interacting with the CoinGecko API
+###  R functions for interacting with the CoinGecko API
 
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under development*
 

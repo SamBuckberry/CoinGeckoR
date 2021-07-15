@@ -1,7 +1,7 @@
 CoinGeckoR
 ================
 
-<img src="images/CoinGecko_Logo.png" style="height: 100px; width:100px;"/>
+<a><img src="images/CoinGecko_Logo.png" align="left" height="100" width="100" ></a>
 
 ### R functions for interacting with the CoinGecko API
 
@@ -62,7 +62,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 44039
+    ## 44179
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -116,7 +116,7 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 32910
+    ## [1] 33034
 
   - `/coins/{id}` Get current data (name, price, market, … including
     exchange tickers) for a coin.
@@ -196,12 +196,12 @@ head(cat_list)
     ## [5,] "centralized-exchange-token-cex" "Centralized Exchange Token (CEX)"
     ## [6,] "polygon-ecosystem"              "Polygon Ecosystem"               
     ##      market_cap   market_cap_change_24h volume_24h  updated_at                
-    ## [1,] 113563243686 0.1107801             50110415119 "2021-07-15T00:31:34.385Z"
-    ## [2,] 85009364546  -0.943721             7732259615  "2021-07-15T00:31:33.191Z"
-    ## [3,] 73145038024  -0.7342922            5476478026  "2021-07-15T00:31:28.424Z"
-    ## [4,] 66821639001  -0.637674             5864588851  "2021-07-15T00:31:24.566Z"
-    ## [5,] 63547535256  -0.7614539            2957723141  "2021-07-15T00:35:16.463Z"
-    ## [6,] 30232442643  -1.203633             4611979793  "2021-07-15T00:31:18.025Z"
+    ## [1,] 113578588477 0.1578766             50120058099 "2021-07-15T00:41:00.839Z"
+    ## [2,] 85106749275  -0.864669             7846923851  "2021-07-15T00:40:59.816Z"
+    ## [3,] 73312686657  -0.5880068            5927227792  "2021-07-15T00:40:56.888Z"
+    ## [4,] 66938686679  -0.4959046            6015611237  "2021-07-15T00:40:53.010Z"
+    ## [5,] 63629988396  -0.715685             3073229100  "2021-07-15T00:40:31.294Z"
+    ## [6,] 30324218366  -1.131554             4946658520  "2021-07-15T00:40:48.047Z"
 
 #### Examples
 
