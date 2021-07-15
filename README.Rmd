@@ -29,6 +29,8 @@ Load the library
 library(CoinGeckoR)
 ```
 
+---
+
 ### CoinGeckoR functions
 
 ---
@@ -41,10 +43,9 @@ Check API server status
 ping_gecko()
 ```
 
+---
 
 #### Simple  
-
----
 
 - `/simple/price`  
 Get the current price of any cryptocurrencies in any other supported currencies that you need.
@@ -66,10 +67,9 @@ support_list <- supported_vs_currencies()
 support_list[1:6]
 ```
 
+---
 
 #### Coins  
-
----
 
 - `/coins/list`
 List all supported coins id, name and symbol.
@@ -105,13 +105,9 @@ This function returns a lot of information!
 ticker_dat <- coins_tickers(id="bitcoin")
 ```
 
-
-
-
+---
 
 #### Categories
-
----
 
 - `/coins/categories/list`
 List all categories
@@ -132,10 +128,7 @@ cat_list <- do.call(rbind, cat_list)
 head(cat_list)
 ```
 
-
-
-
-
+---
 
 #### Examples
 Retreive coin price history for a specific date

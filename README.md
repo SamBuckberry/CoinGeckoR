@@ -30,6 +30,8 @@ Load the library
 library(CoinGeckoR)
 ```
 
+-----
+
 ### CoinGeckoR functions
 
 -----
@@ -48,9 +50,9 @@ ping_gecko()
     ##          gecko_says 
     ## "(V3) To the Moon!"
 
-#### Simple
-
 -----
+
+#### Simple
 
   - `/simple/price`  
     Get the current price of any cryptocurrencies in any other supported
@@ -64,7 +66,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 44242
+    ## 44301
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
@@ -82,9 +84,9 @@ support_list[1:6]
 
     ## [1] "btc" "eth" "ltc" "bch" "bnb" "eos"
 
-#### Coins
-
 -----
+
+#### Coins
 
   - `/coins/list` List all supported coins id, name and symbol.
 
@@ -118,7 +120,7 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 33060
+    ## [1] 33099
 
   - `/coins/{id}` Get current data (name, price, market, … including
     exchange tickers) for a coin.
@@ -156,9 +158,9 @@ names(cd)
 ticker_dat <- coins_tickers(id="bitcoin")
 ```
 
-#### Categories
-
 -----
+
+#### Categories
 
   - `/coins/categories/list` List all categories
 
@@ -198,12 +200,14 @@ head(cat_list)
     ## [5,] "centralized-exchange-token-cex" "Centralized Exchange Token (CEX)"
     ## [6,] "polygon-ecosystem"              "Polygon Ecosystem"               
     ##      market_cap   market_cap_change_24h volume_24h  updated_at                
-    ## [1,] 113578588477 0.3847285             50096132180 "2021-07-15T00:50:29.705Z"
-    ## [2,] 85107334591  -0.6071738            7921195216  "2021-07-15T00:50:28.843Z"
-    ## [3,] 73308527298  -0.2889902            5924535976  "2021-07-15T00:50:26.265Z"
-    ## [4,] 66938686679  -0.2390817            6016346824  "2021-07-15T00:50:22.769Z"
-    ## [5,] 63629988396  -0.4421776            3076482189  "2021-07-15T00:50:05.131Z"
-    ## [6,] 30321313367  -0.6869153            4953625733  "2021-07-15T00:50:18.781Z"
+    ## [1,] 113601514538 0.5849826             50099196049 "2021-07-15T00:55:26.563Z"
+    ## [2,] 85569102370  -0.07798799           7962451040  "2021-07-15T00:55:25.732Z"
+    ## [3,] 73746653406  0.2622094             5932621908  "2021-07-15T00:55:23.349Z"
+    ## [4,] 67226653938  0.2066221             6071975531  "2021-07-15T00:55:20.323Z"
+    ## [5,] 63892494423  0.00730046            3114847738  "2021-07-15T00:55:03.952Z"
+    ## [6,] 30527030359  -0.06531533           4996673699  "2021-07-15T00:55:16.428Z"
+
+-----
 
 #### Examples
 
