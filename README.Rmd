@@ -9,6 +9,8 @@ output: github_document
 
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under development*
 
+---
+
 CoinGecko API documentation (v3)
 https://www.coingecko.com/api/documentations/v3
 

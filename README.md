@@ -8,6 +8,8 @@ CoinGeckoR
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under
 development*
 
+-----
+
 CoinGecko API documentation (v3)
 <https://www.coingecko.com/api/documentations/v3>
 
@@ -62,7 +64,7 @@ price(ids = "bitcoin", vs_currencies = "aud")
 
     ## $bitcoin
     ##   aud 
-    ## 44179
+    ## 44242
 
   - `/simple/token_price/{id}`  
     Get current price of tokens (using contract addresses) for a given
