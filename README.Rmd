@@ -3,9 +3,11 @@ title: "CoinGeckoR"
 output: github_document
 ---
 
+<img src="images/CoinGecko_Logo.png" style="height: 100px; width:100px;">
+
 ### R functions for interacting with the CoinGecko API
 
-*Package is currently under development and in its infancy*
+**Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under development*
 
 CoinGecko API documentation (v3)
 https://www.coingecko.com/api/documentations/v3
