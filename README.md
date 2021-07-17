@@ -8,8 +8,8 @@ CoinGeckoR
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under
 development*
 
-CoinGecko API documentation (v3)
-<https://www.coingecko.com/api/documentations/v3>
+These functions should be used in conjunction with the [CoinGecko API
+documentation](https://www.coingecko.com/api/documentations/v3).
 
 -----
 
@@ -24,8 +24,6 @@ library(devtools)
 install_github("https://github.com/SamBuckberry/CoinGeckoR")
 ```
 
-Load the library
-
 ``` r
 library(CoinGeckoR)
 ```
@@ -36,10 +34,14 @@ library(CoinGeckoR)
 
 -----
 
+The functions listed below correspond to the list in the [CoinGecko API
+documentation](https://www.coingecko.com/api/documentations/v3).
+
+-----
+
 #### Ping
 
-  - `/simple/ping`  
-    Check API server status
+  - `/simple/ping` Check API server status
 
 <!-- end list -->
 
@@ -47,35 +49,115 @@ library(CoinGeckoR)
 ping_gecko()
 ```
 
-    ##          gecko_says 
-    ## "(V3) To the Moon!"
-
 -----
 
 #### Simple
 
-  - `/simple/price`  
-    Get the current price of any cryptocurrencies in any other supported
-    currencies that you need.
+  - `/simple/price` Get the current price of any cryptocurrencies in any
+    other supported currencies that you need.
 
 <!-- end list -->
 
 ``` r
-price(ids = "bitcoin", vs_currencies = "aud")
+price(ids = "bitcoin", vs_currencies = "usd")
 ```
 
-    ## $bitcoin
-    ##   aud 
-    ## 44301
+  - `/simple/token_price/{id}` Get current price of tokens (using
+    contract addresses) for a given platform in any other currency that
+    you need.
 
-  - `/simple/token_price/{id}`  
-    Get current price of tokens (using contract addresses) for a given
-    platform in any other currency that you need.
-
-  - `/simple/supported_vs_currencies`  
-    Get list of supported\_vs\_currencies
+  - `/simple/supported_vs_currencies` Get list of
+    supported\_vs\_currencies
 
 <!-- end list -->
+
+``` r
+supported_vs_currencies()
+```
+
+-----
+
+#### Coins
+
+  - `/coins/list` List all supported coins id, name and symbol.
+
+<!-- end list -->
+
+``` r
+coins_list()
+```
+
+  - `/coins/markets` List all supported coins price, market cap, volume,
+    and market related data.
+
+<!-- end list -->
+
+``` r
+markets(vs_currency = "usd", ids = "bitcoin")
+```
+
+  - `/coins/{id}` Get current data (name, price, market, … including
+    exchange tickers) for a coin.
+
+<!-- end list -->
+
+``` r
+coins_data(id = "bitcoin")
+```
+
+  - `/coins/{id}/tickers` Get coin tickers (paginated to 100 items).
+    This function returns a lot of information\!
+
+<!-- end list -->
+
+``` r
+coins_tickers(id="bitcoin")
+```
+
+  - `/coins/{id}/market_chart` Get historical market data include price,
+    market cap, and 24h volume (granularity auto).
+
+<!-- end list -->
+
+``` r
+coins_chart(id = "bitcoin", currency = "usd", days = 30)
+```
+
+-----
+
+#### Categories
+
+  - `/coins/categories/list` List all categories.
+
+<!-- end list -->
+
+``` r
+coin_categories()
+```
+
+  - `/coins/categories/list` List all categories with market data.
+
+<!-- end list -->
+
+``` r
+coin_categories_data()
+```
+
+## Examples
+
+#### Simple
+
+`/simple/price` Get the current price of any cryptocurrencies in any
+other supported currencies that you need.
+
+``` r
+price(ids = "bitcoin", vs_currencies = "usd")
+```
+
+`/simple/token_price/{id}` Get current price of tokens (using contract
+addresses) for a given platform in any other currency that you need.
+
+`/simple/supported_vs_currencies` Get list of supported\_vs\_currencies
 
 ``` r
 support_list <- supported_vs_currencies()
@@ -120,7 +202,7 @@ mkt[[1]][c("id", "current_price")]
     ## [1] "bitcoin"
     ## 
     ## $current_price
-    ## [1] 33099
+    ## [1] 31971
 
   - `/coins/{id}` Get current data (name, price, market, … including
     exchange tickers) for a coin.
@@ -198,14 +280,14 @@ head(cat_list)
     ## [3,] "decentralized-finance-defi"     "Decentralized Finance (DeFi)"    
     ## [4,] "binance-smart-chain"            "Binance Smart Chain Ecosystem"   
     ## [5,] "centralized-exchange-token-cex" "Centralized Exchange Token (CEX)"
-    ## [6,] "polygon-ecosystem"              "Polygon Ecosystem"               
+    ## [6,] "governance"                     "Governance"                      
     ##      market_cap   market_cap_change_24h volume_24h  updated_at                
-    ## [1,] 113601514538 0.5849826             50099196049 "2021-07-15T00:55:26.563Z"
-    ## [2,] 85569102370  -0.07798799           7962451040  "2021-07-15T00:55:25.732Z"
-    ## [3,] 73746653406  0.2622094             5932621908  "2021-07-15T00:55:23.349Z"
-    ## [4,] 67226653938  0.2066221             6071975531  "2021-07-15T00:55:20.323Z"
-    ## [5,] 63892494423  0.00730046            3114847738  "2021-07-15T00:55:03.952Z"
-    ## [6,] 30527030359  -0.06531533           4996673699  "2021-07-15T00:55:16.428Z"
+    ## [1,] 113833678501 1.633206              49274967994 "2021-07-16T01:40:33.964Z"
+    ## [2,] 85339272363  1.032331              7203993842  "2021-07-16T01:40:33.055Z"
+    ## [3,] 74008347419  -0.05900448           5332841088  "2021-07-16T01:40:29.369Z"
+    ## [4,] 68570135334  1.114895              6987322951  "2021-07-16T01:40:26.352Z"
+    ## [5,] 64683071570  2.001102              2720804722  "2021-07-16T01:40:07.058Z"
+    ## [6,] 31595918854  -0.2833646            2175004532  "2021-07-16T01:40:32.161Z"
 
 -----
 

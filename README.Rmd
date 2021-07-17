@@ -9,8 +9,7 @@ output: github_document
 
 **Powered by** [CoinGecko](https://www.coingecko.com/). *Currently under development*
 
-CoinGecko API documentation (v3)
-https://www.coingecko.com/api/documentations/v3
+These functions should be used in conjunction with the [CoinGecko API documentation](https://www.coingecko.com/api/documentations/v3). 
 
 ---
 
@@ -24,7 +23,6 @@ library(devtools)
 install_github("https://github.com/SamBuckberry/CoinGeckoR")
 ```
 
-Load the library
 ```{r}
 library(CoinGeckoR)
 ```
@@ -33,12 +31,13 @@ library(CoinGeckoR)
 
 ### CoinGeckoR functions
 
+The functions listed below correspond to the list in the [CoinGecko API documentation](https://www.coingecko.com/api/documentations/v3). 
+
 ---
 
 #### Ping
 
-- `/simple/ping`  
-Check API server status
+- `/simple/ping` Check API server status  
 ```{r}
 ping_gecko()
 ```
@@ -47,21 +46,103 @@ ping_gecko()
 
 #### Simple  
 
-- `/simple/price`  
-Get the current price of any cryptocurrencies in any other supported currencies that you need.
-
-```{r}
-price(ids = "bitcoin", vs_currencies = "aud")
+- `/simple/price` Get the current price of any cryptocurrencies in any other supported currencies that you need.
+```{r, results='hide'}
+price(ids = "bitcoin", vs_currencies = "usd")
 ```
 
-- `/simple/token_price/{id}`  
-Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
-```{r}
+- `/simple/token_price/{id}` Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
+```{r, results='hide'}
 
 ```
 
-- `/simple/supported_vs_currencies`  
-Get list of supported_vs_currencies  
+- `/simple/supported_vs_currencies` Get list of supported_vs_currencies  
+```{r, results='hide'}
+supported_vs_currencies()
+```
+
+---
+
+#### Coins  
+
+- `/coins/list` List all supported coins id, name and symbol.
+```{r, results='hide'}
+coins_list()
+```
+
+- `/coins/markets` List all supported coins price, market cap, volume, and market related data.
+```{r, results='hide'}
+markets(vs_currency = "usd", ids = "bitcoin")
+```
+
+- `/coins/{id}` Get current data (name, price, market, ... including exchange tickers) for a coin. 
+```{r, results='hide'}
+coins_data(id = "bitcoin")
+```
+
+- `/coins/{id}/tickers` Get coin tickers (paginated to 100 items). 
+This function returns a lot of information!
+```{r, results='hide'}
+coins_tickers(id="bitcoin")
+```
+
+- `/coins/{id}/market_chart` Get historical market data include price, market cap, and 24h volume (granularity auto)
+```{r, results='hide'}
+coins_chart(id = "bitcoin", currency = "usd", days = 30)
+```
+
+- `/coins/{id}/market_chart/range` Get historical market data include price, market cap, and 24h volume within a range of timestamp (granularity auto)
+```{r, results='hide'}
+
+```
+
+- `/coins/{id}/status_updates` Get status updates for a given coin
+```{r, results='hide'}
+
+```
+
+- `/coins/{id}/ohlc` Get coin's OHLC
+```{r, results='hide'}
+
+```
+
+---
+
+#### Categories
+
+- `/coins/categories/list` List all categories.
+```{r, eval=FALSE}
+coin_categories()
+```
+
+- `/coins/categories/list` List all categories with market data.
+```{r, eval=FALSE}
+coin_categories_data()
+```
+
+
+
+
+
+
+
+
+
+## Examples
+
+#### Simple  
+
+`/simple/price` Get the current price of any cryptocurrencies in any other supported currencies that you need.
+```{r, eval=FALSE}
+price(ids = "bitcoin", vs_currencies = "usd")
+```
+
+`/simple/token_price/{id}` Get current price of tokens (using contract addresses) for a given platform in any other currency that you need.
+```{r}
+
+```
+
+`/simple/supported_vs_currencies` Get list of supported_vs_currencies  
 ```{r}
 support_list <- supported_vs_currencies()
 support_list[1:6]
