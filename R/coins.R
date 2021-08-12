@@ -152,3 +152,37 @@ coins_chart <- function(id, currency, days=30){
 
 
 
+#' Title
+#'
+#' @param id Character. The id of the coin. refers to /coins/list.
+#' @param currency Character. The target currency of market data (usd, eur, jpy, etc.)
+#' @param from POSIXlt. For example as.POSIXlt("2019-12-31")
+#' @param to POSIXlt. For example as.POSIXlt("2020-12-31")
+#'
+#' @return list
+#' @export
+#'
+#' @examples coins_chart_range("bitcoin", "usd", as.POSIXlt("2020-08-11"), as.POSIXlt("2021-08-11"))
+coins_chart_range <- function(id, currency, from, to){
+        
+        assertthat::assert_that(class(id) == "character")
+        assertthat::assert_that(class(currency) == "character")
+        assertthat::assert_that(class(from)[1] == "POSIXlt",
+                                msg = "POSIXlt_date is not of class POSIXlt")
+        assertthat::assert_that(class(to)[1] == "POSIXlt",
+                                msg = "POSIXlt_date is not of class POSIXlt")
+        
+        v <- api_version()
+        
+        api_call <- paste0(v,
+                           "coins/", id,
+                           "/market_chart/range?vs_currency=", casefold(currency),
+                           "&from=", as.numeric(from),
+                           "&to=", as.numeric(to))
+        
+        json_dat <- get_json(api_call)
+        return(json_dat)
+        
+        
+}
+
